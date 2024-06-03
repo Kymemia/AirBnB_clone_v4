@@ -88,4 +88,10 @@ $(document).ready(function () {
   }
 
   fetchPlaces();
+
+	$('button').click(function() {
+		const selectedAmenities = Object.keys(amenityDict);
+		const requestData = selectedAmenities.length ? { amenities: selectedAmenities } : {};
+		fetchPlaces(requestData);
+	});
 });
